@@ -285,7 +285,7 @@ export async function getDoctorById(req,res) {
        }
        return res.json({success:true ,data:normalizeDocForClient(doc)});
     } catch (error) {
-         console.error("getDoctorById:", err);
+         console.error("getDoctorById:", error);
     return res.status(500).json({ success: false, message: "Server error" });
     }
 }
@@ -306,7 +306,7 @@ if(existing.imagePublicId){
 await Doctor.findByIdAndDelete(id);
 return res.json({success:true,message:"Doctor Removed"});
     } catch (error) {
-         console.error("deleteDoctor error:", err);
+         console.error("deleteDoctor error:", error);
     return res.status(500).json({ success: false, message: "Server error" });
     }
 }
@@ -331,7 +331,7 @@ export async function toggleAvailability(req,res) {
  delete out.password;
  return res.json({success:true,data:out});
     } catch (error) {
-           console.error("deleteDoctor error:", err);
+console.error("toggleAvailability error:", error);
     return res.status(500).json({ success: false, message: "Server error" });
     }
 }
@@ -366,7 +366,7 @@ export async function doctorLogin(req,res){
     delete out.password;
 return res.json({success:true,token,data:out});
     } catch (error) {
-           console.error("Login Doctor error:", err);
+           console.error("Login Doctor error:", error);
     return res.status(500).json({ success: false, message: "Server error" });
     }
 }
