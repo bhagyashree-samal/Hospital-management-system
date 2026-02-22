@@ -167,7 +167,7 @@ const Navbar = () => {
           <div className={ns.logoContainer}>
             <img src={logoImg} alt="logo" className={ns.logoImage} />
             <Link to="/">
-              <div className={ns.logoLink}>ArogyaSetu HMS</div>
+              <div className={ns.logoLink}>ArogyaPlus HMS</div>
               <div className={ns.logoSubtext}>Healthcare Solution</div>
             </Link>
           </div>
