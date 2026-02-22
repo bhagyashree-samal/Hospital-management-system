@@ -5,7 +5,7 @@ import {
 } from "../utils/cloudinary.js";
 import jwt from "jsonwebtoken";
 
-//Helper functions
+
 //this function will convert time 12hrs to number of minutes since midnight;
 const parseTimeToMinutes = (t = "") => {
   const [time = "0:00", ampm = ""] = (t || "").split(" ");
