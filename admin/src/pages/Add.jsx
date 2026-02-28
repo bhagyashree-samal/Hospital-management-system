@@ -1,14 +1,14 @@
-import React from 'react'
-import Navbar from '../components/Navbar/Navbar.jsx'
-import AddPage from '../components/AddPage/AddPage.jsx'
+import React from "react";
+import Navbar from "../components/Navbar/Navbar.jsx";
+import AddPage from "../components/AddPage/AddPage.jsx";
 
 const Add = () => {
   return (
     <div>
-        <Navbar/>
-<AddPage/>
+      <Navbar />
+      <AddPage />
     </div>
-  )
-}
+  );
+};
 
-export default Add
+export default Add;
