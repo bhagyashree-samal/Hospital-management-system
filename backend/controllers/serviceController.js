@@ -118,7 +118,9 @@ export async function createService(req, res) {
 //to get all the services  
 export async function getServices(req,res){
   try{
-const list=(await Service.find()).sort({createdAt:-1}).lean();
+const list = await Service.find()
+      .sort({ createdAt: -1 })  
+      .lean();
 return res.status(200).json({
   success:true,
   data:list

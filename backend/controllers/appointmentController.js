@@ -3,7 +3,7 @@ import Doctor from "../models/Doctor.js";
 import dotenv from "dotenv";
 import Stripe from "stripe";
 import { getAuth } from "@clerk/express";
-import { clerkClient } from "@clerk/clerk-sdk-node";
+ import { clerkClient } from "@clerk/clerk-sdk-node";
 dotenv.config();
 
 const STRIPE_KEY = process.env.STRIPE_SECRET_KEY;
@@ -604,12 +604,16 @@ export const getAppointmentsByDoctor = async (req, res) => {
 export async function getRegisteredUserCount(req,res){
   try {
     const totalUsers=await clerkClient.users.getCount();
+    console.log(totalUsers);
     return res.json({success:true,totalUsers});
   } catch (error) {
      console.error("getRegisteredUserCount error:", error);
     return res.status(500).json({ success: false, message: "Server error" });
   }
 }
+
+
+
 
 export default{
   getAppointments,getAppointmentsByDoctor,getAppointmentsByPatient,createAppointment,confirmPayment,updateAppointment,cancelAppointment,getRegisteredUserCount,getStats
