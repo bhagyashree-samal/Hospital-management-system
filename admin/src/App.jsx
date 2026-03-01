@@ -5,6 +5,7 @@ import { useUser } from "@clerk/clerk-react";
 import Home from "./pages/Home.jsx";
 import Add from "./pages/Add.jsx";
 import List from "./pages/List.jsx";
+import Appointments from "./pages/Appointments.jsx";
 
 function RequireAuth({ children }) {
   const { isLoaded, isSignedIn } = useUser();
@@ -38,6 +39,8 @@ const App = () => {
         } />
         <Route path="/add" element={<RequireAuth><Add/></RequireAuth>}/>
  <Route path="/list" element={<RequireAuth><List/></RequireAuth>}/>
+  <Route path="/appointments" element={<RequireAuth><Appointments/></RequireAuth>}/>
+
     </Routes>
   );
 };
