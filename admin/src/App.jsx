@@ -7,6 +7,7 @@ import Add from "./pages/Add.jsx";
 import List from "./pages/List.jsx";
 import Appointments from "./pages/Appointments.jsx";
 import SerDashboard from "./pages/SerDashboard.jsx";
+import AddSer from "./pages/AddSer.jsx";
 
 function RequireAuth({ children }) {
   const { isLoaded, isSignedIn } = useUser();
@@ -42,6 +43,7 @@ const App = () => {
  <Route path="/list" element={<RequireAuth><List/></RequireAuth>}/>
   <Route path="/appointments" element={<RequireAuth><Appointments/></RequireAuth>}/>
   <Route path="/service-dashboard" element={<RequireAuth><SerDashboard/></RequireAuth>}/>
+ <Route path="/add-service" element={<RequireAuth><AddSer/></RequireAuth>}/>
 
     </Routes>
   );
